@@ -1,0 +1,14 @@
+{
+  "extends": "vue",
+  "plugins": ["testcafe"],
+  "standard": "airbnb",
+  "rules": {
+    "import/no-unresolved": 0,
+    "import/no-unassigned-import": 0
+  },
+  "parserOptions":{
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  }
+}
