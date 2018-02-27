@@ -12,9 +12,9 @@
         <img class="navbar-profile-avatar" v-show="isAuth" v-bind:src="avatar">
         <span class="navbar-profile-name">{{displayName}}</span>
       </router-link>
-      <router-link to="/" class="navbar-item" v-show="isAuth">Listy</router-link>
-      <router-link to="/signin" class="navbar-item" v-show="!isAuth">Zaloguj</router-link>
-      <router-link to="/logout" class="navbar-item" v-show="isAuth">Wyloguj</router-link>
+      <router-link to="/" class="navbar-item" v-show="isAuth">{{ $t("nav.lists") }}</router-link>
+      <router-link to="/signin" class="navbar-item" v-show="!isAuth">{{ $t("nav.login") }}</router-link>
+      <router-link to="/logout" class="navbar-item" v-show="isAuth">{{ $t("nav.logout") }}</router-link>
     </div>
   </nav>
 </template>

@@ -4,12 +4,12 @@
 <script>
 export default {
   mounted () {
-    this.$myAuth.onAuthStateChanged(user => {
+    this.$auth.onAuthStateChanged(user => {
       if(!user){
         this.$router.replace({name:'sign-in'})
       }
     })
-    this.$myAuth.signOut()
+    this.$auth.signOut()
   }
 }
 </script>

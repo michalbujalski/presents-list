@@ -7,7 +7,7 @@
       :title="listToDeletName"
       :id="listToDeleteId"/>
     <navigation/>
-    <h2>Listy prezentów</h2>
+    <h2>{{ $t("home.title") }}</h2>
     <ul>
       <li v-for="list in lists" :key="list.id">
         <list-item
@@ -18,7 +18,7 @@
       </li>
     </ul>
     <div class="present-list__footer">
-      <router-link class="button is-primary present-list__add-new" :to="{ name: 'list-new'}">Nowa lista</router-link>
+      <router-link class="button is-primary present-list__add-new" :to="{ name: 'list-new'}">{{ $t("home.newList") }}</router-link>
     </div>
   </div>
 </template>

@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import { authUI, auth } from './presents-firebase'
 import RemoteDbPlugin from './remote-db'
+import i18n from './I18n'
 
 const FirebasePlugin = {
   install: (Vue, options) => {
@@ -21,6 +22,7 @@ Vue.use(FirebasePlugin)
 sync(store, router)
 
 const app = new Vue({
+  i18n,
   router,
   store,
   created () {
