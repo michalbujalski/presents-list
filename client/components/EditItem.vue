@@ -10,9 +10,9 @@
         placeholder="Nazwa prezentu"
         v-model="title">
     </div>
-    <button v-show="isEditing" class="present-item--edit button is-success" @click="saveItem">Zapisz</button>
-    <button v-show="!isEditing" class="present-item--edit button is-info" @click="editItem">Edytuj</button>
-    <button class="present-item--delete button is-danger" @click="deleteItem">Usuń</button>
+    <button v-show="isEditing" class="present-item--edit button is-success" @click="saveItem">{{ $t("listEdit.save") }}</button>
+    <button v-show="!isEditing" class="present-item--edit button is-info" @click="editItem">{{ $t("listEdit.edit") }}</button>
+    <button class="present-item--delete button is-danger" @click="deleteItem">{{ $t("listEdit.delete") }}</button>
   </div>
 </template>
 <script>

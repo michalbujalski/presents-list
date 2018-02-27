@@ -2,7 +2,7 @@
   <section class="page new-list--wrapper">
     <navigation/>
     <div class="field">
-      <label class="label">Nazwa listy</label>
+      <label class="label">{{ $t("listEdit.listName") }}</label>
       <div class="control">
         <input class="input" type="text" placeholder="Text input" v-model="name">
       </div>
@@ -14,7 +14,7 @@
       @item-saved="saveItem"/>
     <button
       class="button is-success new-list--submit"
-      @click="endEditing">Zapisz</button>
+      @click="endEditing">{{ $t("listEdit.save") }}</button>
   </section>
 </template>
 <script>
