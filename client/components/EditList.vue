@@ -8,7 +8,7 @@
           @delete="deleteItem"/>
       </li>
     </ul>
-    <button class="button is-primary" @click="addNew">Dodaj</button>
+    <button class="button is-primary" @click="addNew">{{ $t("listEdit.add") }}</button>
   </div>
 </template>
 <script>

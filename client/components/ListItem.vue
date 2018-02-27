@@ -1,7 +1,7 @@
 <template>
   <div class="list-item__wrapper">
     <router-link class="list-item__title" :to="link">{{title}}</router-link>
-    <button @click="deleteItem" class="button is-info">Delete</button>
+    <button @click="deleteItem" class="button is-info">{{ $t("listsItem.delete") }}</button>
   </div>
 </template>
 <script>

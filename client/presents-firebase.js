@@ -4,7 +4,6 @@ import firebaseui from 'firebaseui'
 let i = null
 const instance = () => {
   if (!i) {
-    console.log(process.env.FIREBASE_CONFIG)
     i = Firebase.initializeApp(process.env.FIREBASE_CONFIG)
   }
   return i
