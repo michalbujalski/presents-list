@@ -9,6 +9,7 @@ const rm = require('rimraf')
 const base = require('./webpack.base')
 const _ = require('./utils')
 const config = require('./config')
+const prodEnv = require('./env.prod')
 
 if (config.electron) {
   // remove files in dist folder in electron mode
@@ -27,7 +28,8 @@ base.plugins.push(
   new ProgressPlugin(),
   new ExtractTextPlugin('styles.[contenthash:8].css'),
   new webpack.DefinePlugin({
-    'process.env.NODE_ENV': JSON.stringify('production')
+    'process.env.NODE_ENV': JSON.stringify('production'),
+    'process.env.FIREBASE_CONFIG': JSON.stringify(prodEnv.firebaseConfig)
   }),
   new webpack.optimize.UglifyJsPlugin({
     sourceMap: true,
