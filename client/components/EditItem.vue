@@ -5,10 +5,13 @@
       class="field present-item--edit-title"
       v-show="isEditing">
       <input
-        class="input"
+        v-validate="'required|min:3'" 
+        :class="{'input': true, 'is-danger': errors.has($t('listEdit.itemTitle')) }"
         type="text"
         placeholder="Nazwa prezentu"
+        :name="$t('listEdit.itemTitle')"
         v-model="title">
+        <span v-show="errors.has($t('listEdit.itemTitle'))" class="help is-danger">{{ errors.first($t('listEdit.itemTitle')) }}</span>
     </div>
     <button v-show="isEditing" class="present-item--edit button is-success" @click="saveItem">{{ $t("listEdit.save") }}</button>
     <button v-show="!isEditing" class="present-item--edit button is-info" @click="editItem">{{ $t("listEdit.edit") }}</button>

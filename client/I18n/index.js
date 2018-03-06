@@ -22,7 +22,8 @@ const messages = {
       edit: 'Edit',
       delete: 'Delete',
       add: 'Add',
-      save: 'Save'
+      save: 'Save',
+      itemTitle: 'present title'
     },
     listDetails: {
       editList: 'Edit list',
@@ -48,7 +49,8 @@ const messages = {
       edit: 'Edytuj',
       delete: 'Usuń',
       add: 'Dodaj',
-      save: 'Zapisz'
+      save: 'Zapisz',
+      itemTitle: 'nazwa prezentu'
     },
     listDetails: {
       editList: 'Edytuj listę',
@@ -58,7 +60,11 @@ const messages = {
   }
 }
 
-export default new VueI18n({
-  locale: navigator.language === 'pl' ? 'pl' : 'en',
+const language = () => navigator.language === 'pl' ? 'pl' : 'en'
+
+const i18n = new VueI18n({
+  locale: language(),
   messages
 })
+
+export { i18n, language }
