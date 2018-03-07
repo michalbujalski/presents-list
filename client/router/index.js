@@ -32,7 +32,8 @@ const router = new Router({
     {
       path: '/:userId/lists/edit/:listId',
       name: 'list-edit',
-      component: ListNew
+      component: ListNew,
+      meta: { requiresAuth: true }
     },
     {
       path: '/:userId/lists/show/:listId',
