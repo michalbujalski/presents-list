@@ -79,7 +79,7 @@ export default {
       }
       this.$db.ref(this.url).on('value', onChange)
     },
-    async endEditing (){
+    endEditing (){
       this.$router.replace(
         {
           name: 'list-details',
