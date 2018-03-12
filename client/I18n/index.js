@@ -60,11 +60,12 @@ const messages = {
   }
 }
 
-const language = () => navigator.language === 'pl' ? 'pl' : 'en'
-
+const language = () => navigator.language === 'pl' ? PL : EN
+const PL = 'pl'
+const EN = 'en'
 const i18n = new VueI18n({
   locale: language(),
   messages
 })
 
-export { i18n, language }
+export { i18n, language, PL, EN }
