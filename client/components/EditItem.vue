@@ -13,7 +13,7 @@
         v-model="title">
         <span v-show="errors.has($t('listEdit.itemTitle'))" class="help is-danger">{{ errors.first($t('listEdit.itemTitle')) }}</span>
     </div>
-    <button v-show="isEditing" class="present-item--edit button is-success" @click="saveItem">{{ $t("listEdit.save") }}</button>
+    <button v-show="isEditing" class="present-item--edit button is-success" @click="saveItem" :disabled="errors.has($t('listEdit.itemTitle'))">{{ $t("listEdit.save") }}</button>
     <button v-show="!isEditing" class="present-item--edit button is-info" @click="editItem">{{ $t("listEdit.edit") }}</button>
     <button class="present-item--delete button is-danger" @click="deleteItem">{{ $t("listEdit.delete") }}</button>
   </div>

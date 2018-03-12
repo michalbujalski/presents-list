@@ -1,25 +1,38 @@
 <template>
   <div>
     <ul>
-      <li v-for="item in exitingItems" :key="item.id">
+      <li v-for="item in existingItems" :key="item.id">
         <edit-item
           :item="item"
           @save="saveItem"
           @delete="deleteItem"/>
       </li>
     </ul>
-    <button class="button is-primary" @click="addNew">{{ $t("listEdit.add") }}</button>
+    <button
+      class="button is-primary"
+      @click="addNew"
+      :disabled="hasEmptyItems">
+      {{ $t("listEdit.add") }}
+    </button>
   </div>
 </template>
 <script>
+
 import EditItem from './EditItem'
 export default {
   components: {EditItem},
   props:{
-    exitingItems: {
+    existingItems: {
       type: Array,
       required: true
     }
+  },
+  computed: {
+    hasEmptyItems () {
+      return !!this.existingItems.find(item=>{
+        return !item.title || item.title===''
+      })
+    },
   },
   methods: {
     saveItem (e) {

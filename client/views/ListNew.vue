@@ -8,7 +8,7 @@
       </div>
     </div>
     <edit-list
-      :exitingItems="existingItems"
+      :existingItems="items"
       @item-added="addItem"
       @item-deleted="deleteItem"
       @item-saved="saveItem"/>
@@ -50,7 +50,7 @@ export default {
     return {
       name: '',
       newItems: [],
-      existingItems: []
+      items: []
     }
   },
   methods: {
@@ -69,12 +69,12 @@ export default {
         if(!data) return;
         this.name = data.title
         if(data.items){
-          this.existingItems = Object.keys(data.items)
+          this.items = Object.keys(data.items)
             .map(key=>{
               return {...data.items[key],id:key}
             })
         }else{
-          this.existingItems = []
+          this.items = []
         }
       }
       this.$db.ref(this.url).on('value', onChange)
